@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using AgenceVoyage.Data;
 
 namespace AgenceVoyage
 {
@@ -23,6 +25,9 @@ namespace AgenceVoyage
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<VoyageContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("VoyageContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,36 @@
+﻿@model AgenceVoyage.Models.Forfait
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Forfait</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.destination)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.prix)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prix)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.duree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duree)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idForfait">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
