@@ -35,7 +35,14 @@ namespace AgenceVoyage.Data
 
             var forfaits = new Forfait[]
             {
-                new Forfait{destination="Maroc", prix=12.2, duree=3}
+                new Forfait{destination="Maroc", prix=1220, duree=3, image="maroc.jpg"},
+                new Forfait { destination = "Abu Dhabi", prix = 1460, duree = 3, image = "AbuDhabi.jpg" },
+                new Forfait { destination = "Australie", prix = 12.2, duree = 3, image = "Australie.jpg" },
+                new Forfait { destination = "Grece", prix = 12.2, duree = 3, image = "Grece.jpg" },
+                new Forfait { destination = "Japon", prix = 12.2, duree = 3, image = "Japon.jpg" },
+                new Forfait { destination = "République Dominicaine", prix = 12.2, duree = 3, image = "RepDom.jpg" },
+                new Forfait { destination = "Thaïlande", prix = 12.2, duree = 3, image = "Thailande.jpg" },
+                new Forfait { destination = "Maroc", prix = 12.2, duree = 3, image = "maroc.jpg" }
             };
 
             foreach (Forfait f in forfaits)
