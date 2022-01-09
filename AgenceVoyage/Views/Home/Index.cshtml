@@ -1,8 +1,50 @@
-﻿@{
+﻿@model IEnumerable<AgenceVoyage.Models.Forfait>
+
+@{
     ViewData["Title"] = "Accueil";
 }
 
 <div class="text-center">
     <h1 class="display-4">Agence de voyage Mehdi et Sylvain</h1>
-    
 </div>
+<header>
+    <div id="myCarousel" class="carousel slide">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="first-slide" src="images/Australie.jpeg" alt="First slide">
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1 class="text-acceuil">Agence de voyage Mehdi et Sylvain</h1>
+                        <p class="text-acceuil">Voyager en temps de COVID... c'est solide!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div>
+
+    <main role="main" class="container">
+        <h1 class="mt-5">Titre container</h1>
+        <p class="lead">Paragraphe container</p>
+        <br>
+        <br>
+        <br>
+
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-lg-4">
+                    <a href="#"><img class="rounded-circle" src="images/Maroc.jpg" width="140" height="140"></a>
+                    <a href="#"><h2>La destination</h2></a>
+                    <p>Description du forfait</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">Détail</a></p>
+                </div>
+            </div>
+        }
+    </main>
+</div>
+
+
