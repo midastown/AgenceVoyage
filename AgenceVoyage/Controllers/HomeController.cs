@@ -8,14 +8,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Threading.Tasks;
 
 namespace AgenceVoyage.Controllers
 {
     public class HomeController : Controller
     {
         private readonly VoyageContext _context;
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
 
         public HomeController(VoyageContext context)
         {

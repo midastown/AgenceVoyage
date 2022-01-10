@@ -41,8 +41,7 @@ namespace AgenceVoyage.Data
                 new Forfait { destination = "Grece", prix = 12.2, duree = 3, image = "Grece.jpg" },
                 new Forfait { destination = "Japon", prix = 12.2, duree = 3, image = "Japon.jpg" },
                 new Forfait { destination = "République Dominicaine", prix = 12.2, duree = 3, image = "RepDom.jpg" },
-                new Forfait { destination = "Thaïlande", prix = 12.2, duree = 3, image = "Thailande.jpg" },
-                new Forfait { destination = "Maroc", prix = 12.2, duree = 3, image = "maroc.jpg" }
+                new Forfait { destination = "Thaïlande", prix = 12.2, duree = 3, image = "Thailande.jpg" }
             };
 
             foreach (Forfait f in forfaits)
