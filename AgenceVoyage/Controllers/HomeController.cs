@@ -27,7 +27,30 @@ namespace AgenceVoyage.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Forfaits.ToListAsync());
+
+            Random random = new Random();
+
+            List<Forfait> forfaits_home = new List<Forfait>();
+            List<Forfait> forfaits = await _context.Forfaits.ToListAsync();
+
+            int indice;
+            int nbAffichage = 0;
+
+            while (nbAffichage < 6)
+            {
+                for (int i = 0; i < forfaits.Count; i++)
+                {
+                    indice = random.Next(0, forfaits.Count - 1);
+
+                    if (!forfaits_home.Contains(forfaits[indice]))
+                    {
+                        nbAffichage++;
+                        forfaits_home.Add(forfaits[indice]);
+                    }
+                }
+            }
+
+            return View(forfaits_home);
         }
 
         public IActionResult Privacy()

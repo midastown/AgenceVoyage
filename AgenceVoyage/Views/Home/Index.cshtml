@@ -28,10 +28,12 @@
         {
 
             <div class="col-lg-4">
-                <a href="#"><img class="rounded-circle" src="images/@Html.DisplayFor(modelItem => item.image)" width="140" height="140"></a>
-                <a href="#"><h2>@Html.DisplayFor(modelItem => item.destination)</h2></a>
-                <p>@Html.DisplayFor(modelItem => item.duree)</p>
-                <p><a class="btn btn-secondary" href="#" role="button">Détail</a></p>
+                <a href="Forfaits/details?id=@item.idForfait"><img class="rounded-circle" src="images/@Html.DisplayFor(modelItem => item.image)" width="140" height="140"></a><br>
+                <a href="Forfaits/details?id=@item.idForfait"><h5>@Html.DisplayFor(modelItem => item.nomForfait)</h5></a><br>
+                <p>@Html.DisplayFor(modelItem => item.duree) jours</p>
+                <p>@Html.DisplayFor(modelItem => item.destination)</p>
+                <p><a class="btn btn-secondary" href="Forfaits/details?id=@item.idForfait" role="button">Détail</a></p>
+                
             </div>
 
         }
