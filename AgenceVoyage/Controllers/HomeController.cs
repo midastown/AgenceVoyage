@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+//using System.Linq;
 using System.Threading.Tasks;
 
 namespace AgenceVoyage.Controllers
@@ -23,7 +23,28 @@ namespace AgenceVoyage.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Forfaits.ToListAsync());
+           
+            Random random = new Random();
+
+            List<Forfait> forfaits_home = new List<Forfait>();
+            List<Forfait> forfaits = await _context.Forfaits.ToListAsync();
+
+            int indice = 0;
+            int nbAffichage = 0;
+
+            for(int i = 0; i < forfaits.Count; i++)
+            {
+                indice = random.Next(0, forfaits.Count - 1);
+
+                if (!forfaits_home.Contains(forfaits[indice]) && nbAffichage < 3)
+                {
+                    nbAffichage++;
+                    forfaits_home.Add(forfaits[indice]);
+                }
+               
+            }
+
+            return View(forfaits_home);
         }
 
         public IActionResult Privacy()
