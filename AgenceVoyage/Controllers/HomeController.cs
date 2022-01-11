@@ -38,7 +38,7 @@ namespace AgenceVoyage.Controllers
                 {
                     indice = random.Next(0, forfaits.Count - 1);
 
-                    if (!forfaits_home.Contains(forfaits[indice]) && nbAffichage < 6)
+                    if (!forfaits_home.Contains(forfaits[indice]))
                     {
                         nbAffichage++;
                         forfaits_home.Add(forfaits[indice]);

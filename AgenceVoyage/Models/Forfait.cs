@@ -10,6 +10,7 @@ namespace AgenceVoyage.Models
     {
 
         public int idForfait { get; set; }
+        public string nomForfait { get; set; }
         public string destination { get; set; }
         public double prix { get; set; }
         public int duree { get; set; }

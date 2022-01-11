@@ -35,13 +35,16 @@ namespace AgenceVoyage.Data
 
             var forfaits = new Forfait[]
             {
-                new Forfait{destination="Maroc", prix=1220, duree=3, image="maroc.jpg"},
-                new Forfait { destination = "Abu Dhabi", prix = 1460, duree = 3, image = "AbuDhabi.jpg" },
-                new Forfait { destination = "Australie", prix = 12.2, duree = 3, image = "Australie.jpg" },
-                new Forfait { destination = "Grece", prix = 12.2, duree = 3, image = "Grece.jpg" },
-                new Forfait { destination = "Japon", prix = 12.2, duree = 3, image = "Japon.jpg" },
-                new Forfait { destination = "République Dominicaine", prix = 12.2, duree = 3, image = "RepDom.jpg" },
-                new Forfait { destination = "Thaïlande", prix = 12.2, duree = 3, image = "Thailande.jpg" }
+                new Forfait{ nomForfait="Escapade romantique", destination="Maroc", prix=1220, duree=12, image="maroc.jpg"},
+                new Forfait{ nomForfait="La traversée du désert", destination="Maroc", prix=1820, duree=13, image="maroc.jpg"},
+                new Forfait { nomForfait="Découverte du Jetset", destination = "Abu Dhabi", prix = 2450, duree = 8, image = "AbuDhabi.jpg" },
+                new Forfait { nomForfait="Outback en jeep", destination = "Australie", prix = 2200, duree = 9, image = "Australie.jpg" },
+                new Forfait { nomForfait="Plaisirs gastronomiques", destination = "Grece", prix = 2489, duree = 12, image = "Grece.jpg" },
+                new Forfait { nomForfait="Expédition au Mont Fudji", destination = "Japon", prix = 1985, duree = 7, image = "Japon.jpg" },
+                new Forfait { nomForfait="Resort Au repos", destination = "République Dominicaine", prix = 1240, duree = 7, image = "RepDom.jpg" },
+                new Forfait { nomForfait="Resort La fête", destination = "République Dominicaine", prix = 1400, duree = 7, image = "RepDom.jpg" },
+                new Forfait { nomForfait="Tour Nord du Pays", destination = "Thaïlande", prix = 3458, duree = 15, image = "Thailande.jpg" },
+                new Forfait { nomForfait="Tour Sud du Pays", destination = "Thaïlande", prix = 3234, duree = 14, image = "Thailande.jpg" }
             };
 
             foreach (Forfait f in forfaits)
