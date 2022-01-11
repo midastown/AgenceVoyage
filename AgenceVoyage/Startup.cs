@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AgenceVoyage.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace AgenceVoyage
 {
@@ -28,6 +29,11 @@ namespace AgenceVoyage
 
             services.AddDbContext<VoyageContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VoyageContext")));
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option => {
+                    option.LoginPath = "/login";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,8 @@ namespace AgenceVoyage
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
