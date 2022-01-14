@@ -9,6 +9,8 @@ namespace AgenceVoyage.Models
     public class Client
     {
         public int idClient { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
         public string nom { get; set; }
         public string prenom { get; set; }
         public string adresse { get; set; }
