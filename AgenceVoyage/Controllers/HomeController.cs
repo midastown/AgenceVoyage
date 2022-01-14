@@ -81,14 +81,17 @@ namespace AgenceVoyage.Controllers
         public async Task<IActionResult> Validate(string username, string password, string returnUrl)
         {
             ViewData["ReturnUrl"] = returnUrl;
-            // Check database for match in Clients (could be a stocked procedure)
-            if (username == "bob" && password == "tako")
+            var user = await _context.Clients
+                .FromSqlInterpolated($"exec [dbo].[GetUser] @username={username}").ToListAsync();
+            
+            if (user[0].password == password)
             {
                 var claims = new List<Claim>()
                 {
                     new Claim("username", username),
+                    new Claim("id", user[0].idClient.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, username),
-                    new Claim(ClaimTypes.Name, "Bob the farmer")
+                    new Claim(ClaimTypes.Name, user[0].nom)
                 };
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
