@@ -87,7 +87,8 @@ namespace AgenceVoyage.Controllers
                 var claims = new List<Claim>()
                 {
                     new Claim("username", username),
-                    new Claim(ClaimTypes.NameIdentifier, username)
+                    new Claim(ClaimTypes.NameIdentifier, username),
+                    new Claim(ClaimTypes.Name, "Bob the farmer")
                 };
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
@@ -96,6 +97,13 @@ namespace AgenceVoyage.Controllers
             }
             TempData["Error"] = "Error. Username or Password is invalid";
             return View("login");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
         }
     }
 }
