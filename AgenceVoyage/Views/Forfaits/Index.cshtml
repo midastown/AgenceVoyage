@@ -4,44 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div>
+    <h1 class="mt-5">Voici la liste de nos forfaits</h1>
+    <br>
+    <div class="row">
+        @foreach (var item in Model)
+        {
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.destination)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.prix)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.duree)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.destination)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.prix)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.duree)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.idForfait">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.idForfait">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.idForfait">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <div class="col-lg-4">
+                <a href="Forfaits/details?id=@item.idForfait"><img class="rounded-circle" src="images/@Html.DisplayFor(modelItem => item.image)" width="140" height="140"></a><br>
+                <a href="Forfaits/details?id=@item.idForfait"><h5>@Html.DisplayFor(modelItem => item.nomForfait)</h5></a><br>
+                <p>@Html.DisplayFor(modelItem => item.duree) jours</p>
+                <p>@Html.DisplayFor(modelItem => item.destination)</p>
+                <p><a class="btn btn-secondary" href="Forfaits/details?id=@item.idForfait" role="button">Détail</a></p>
+
+            </div>
+
+        }
+    </div>
+</div>
+

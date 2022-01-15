@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AgenceVoyage.Data;
 using AgenceVoyage.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgenceVoyage.Controllers
 {
@@ -148,6 +149,12 @@ namespace AgenceVoyage.Controllers
         private bool ForfaitExists(int id)
         {
             return _context.Forfaits.Any(e => e.idForfait == id);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Reserve(int id)
+        {
+            return View(await _context.Forfaits.ToListAsync());
         }
     }
 }
