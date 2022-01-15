@@ -18,7 +18,7 @@ namespace AgenceVoyage.Controllers
     public class HomeController : Controller
     {
         private readonly VoyageContext _context;
-        //private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(VoyageContext context)
         {
@@ -63,11 +63,6 @@ namespace AgenceVoyage.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Authorize]
-        public IActionResult Secured()
-        {
-            return View();
-        }
 
         [HttpGet("login")]
         public IActionResult Login(string returnUrl)

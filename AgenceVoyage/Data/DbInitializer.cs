@@ -57,18 +57,6 @@ namespace AgenceVoyage.Data
             }
 
             context.SaveChanges();
-
-            //var voyages = new Voyage[]
-            //{
-            //    new Voyage{}
-            //};
-
-            //foreach (Voyage v in voyages)
-            //{
-            //    context.Voyages.Add(v);
-            //}
-
-            //context.SaveChanges();
         }
     }
 }

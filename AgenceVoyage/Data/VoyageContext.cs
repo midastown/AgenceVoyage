@@ -24,6 +24,6 @@ namespace AgenceVoyage.Data
             modelBuilder.Entity<Forfait>().HasKey(x => x.idForfait);
             modelBuilder.Entity<Voyage>().HasKey(x => new {x.idClient, x.idForfait});
         }
-        public DbSet<AgenceVoyage.Models.Client> Client { get; set; }
+        
     }
 }
