@@ -15,5 +15,12 @@ namespace AgenceVoyage.Models
         public DateTime dateVoyage { get; set; }
         public Client Client { get; set; }
         public Forfait Forfait { get; set; }
+
+        public Voyage(int idClient, int idForfait, DateTime dateVoyage)
+        {
+            this.idClient = idClient;
+            this.idForfait = idForfait;
+            this.dateVoyage = dateVoyage;
+        }
     }
 }

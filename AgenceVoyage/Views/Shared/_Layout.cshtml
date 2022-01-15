@@ -22,27 +22,36 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Accueil</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Forfaits" asp-action="Index">Forfaits</a>
                         </li>
-                        
-                        <div class="ml-auto">
+                       
 
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
-                                </li>
-                            }
 
+                        @if (User.Identity.IsAuthenticated)
+                        {
                             <li class="nav-item">
-                                <form action="Recherche/Index">
-                                    <input type="text" name="rechercher" />
-                                    <input type="submit" value="Rechercher">
-                                </form>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
                             </li>
-                        </div>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Clients" asp-action="Create">Sign Up</a>
+                            </li>
+                            
+
+                        }
+
+                        <div class="ml-auto">
+                        <li class="nav-item">
+                            <form action="Recherche/Index">
+                                <input type="text" name="rechercher" />
+                                <input type="submit" value="Rechercher">
+                            </form>
+                        </li>
+</div>
                     </ul>
                 </div>
             </div>

@@ -26,8 +26,8 @@ namespace AgenceVoyage.Data
                 new Client{username="mehdi_h", password="fake_password1", nom="Mehdi", prenom="Hachimi", adresse="11 rue champ", ville="montreal", codePostal="h2v3u3", modePaiement="carte"},
                 new Client{username="jocelyn_h", password="fake_password2", nom="Jocelyn", prenom="Hade", adresse="12 rue champ", ville="montreal", codePostal="h2v3u3", modePaiement="cheque"},
                 new Client{username="jean_c", password="fake_password3", nom="Jean-Francois", prenom="Carrier", adresse="13 rue champ", ville="montreal", codePostal="h2v3u3", modePaiement="carte"},
-                new Client{username="sylvain_f", password="fake_password4", nom="Sylvain", prenom="Fafard", adresse="14 rue champ", ville="montreal", codePostal="h2v3u3", modePaiement="espece"},
-                new Client{username="soraya_f", password="fake_password5", nom="Soraya", prenom="Ferdenache", adresse="15 rue champ", ville="montreal", codePostal="h2v3u3", modePaiement="espece"}
+                new Client{username="sylvain_f", password="fake_password4", nom="Sylvain", prenom="Fafard", adresse="14 rue champ", ville="montreal", codePostal="h2v3u3", modePaiement="espece"}
+               
             };
 
             foreach (Client c in clients)
